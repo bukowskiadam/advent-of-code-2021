@@ -32,7 +32,6 @@ func main() {
 		var x1, x2, y1, y2, z1, z2 int
 		fmt.Sscanf(coordinates, "x=%d..%d,y=%d..%d,z=%d..%d", &x1, &x2, &y1, &y2, &z1, &z2)
 
-		fmt.Println(state, x1, x2, y1, y2, z1, z2)
 		if x1 > 50 || x2 < -50 || y1 > 50 || y2 < -50 || z1 > 50 || z2 < -50 {
 			continue
 		}
