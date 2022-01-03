@@ -24,8 +24,7 @@ func includes(s1, s2 string) bool {
 
 func main() {
 	defer utils.MeasureExecutionTime("main")()
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("8/input.txt")
+	lines := utils.Input()
 	sum := 0
 
 	for _, line := range lines {

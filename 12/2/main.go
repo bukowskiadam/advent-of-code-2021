@@ -41,7 +41,7 @@ func canVisit(caves []string, next string) bool {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	caves := make(map[string][]string)
 

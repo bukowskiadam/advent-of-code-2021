@@ -48,8 +48,7 @@ func abs(x int) int {
 }
 
 func main() {
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("7/input.txt")
+	lines := utils.Input()
 	positions := parseInput(lines[0])
 
 	min, _ := findMin(positions)

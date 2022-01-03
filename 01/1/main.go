@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines("1/input.txt")
+	lines := utils.Input()
 	numbers := make([]int, len(lines))
 
 	for index, value := range lines {

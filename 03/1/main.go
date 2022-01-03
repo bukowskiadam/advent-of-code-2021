@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines("3/input.txt")
+	lines := utils.Input()
 	var gamma, ypsilon int
 
 	for index := 0; index < len(lines[0]); index += 1 {

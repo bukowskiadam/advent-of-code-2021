@@ -94,7 +94,7 @@ func matches(unique, tested []Pos) (bool, []Pos) {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	scanners := []Scanner{}
 

@@ -54,8 +54,7 @@ func direction(from, to int) int {
 }
 
 func main() {
-	// READ THE INPUT
-	inputLines, _ := utils.ReadLines("5/input.txt")
+	inputLines := utils.Input()
 	lines := parseInput(inputLines)
 
 	var field [SIZE][SIZE]int

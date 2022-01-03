@@ -35,7 +35,7 @@ func contains(s []string, e string) bool {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	caves := make(map[string][]string)
 

@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("7/input.txt")
+	lines := utils.Input()
 	positions := utils.ReadCommaSeparatedInts(lines[0])
 
 	minFuel := math.MaxInt

@@ -10,7 +10,7 @@ import (
 const MAX_SIZE = 1400
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	dots := [MAX_SIZE][MAX_SIZE]bool{}
 	maxX := 0

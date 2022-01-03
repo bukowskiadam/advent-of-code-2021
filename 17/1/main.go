@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	var x1, x2, y1, y2 int
 	fmt.Sscanf(lines[0], "target area: x=%d..%d, y=%d..%d", &x1, &x2, &y1, &y2)

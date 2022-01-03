@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	var pos [2]int
 	var points [2]int

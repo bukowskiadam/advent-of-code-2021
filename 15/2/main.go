@@ -16,7 +16,7 @@ type gridPoint struct {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	targetX := len(lines[0])*5 - 1
 	targetY := len(lines)*5 - 1

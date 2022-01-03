@@ -62,8 +62,7 @@ func markNumber(b *Board, number int) {
 }
 
 func main() {
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("4/input.txt")
+	lines := utils.Input()
 	numbers := utils.MapToNumbers(strings.Split(lines[0], ","))
 
 	var boards []*Board

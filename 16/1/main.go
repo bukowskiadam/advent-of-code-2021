@@ -68,7 +68,7 @@ func solve(s string) int {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	for _, line := range lines {
 		fmt.Println(solve(line))

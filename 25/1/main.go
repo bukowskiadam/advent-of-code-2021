@@ -21,7 +21,7 @@ func p(g [][]byte) {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 	rows := len(lines)
 	cols := len(lines[0])
 

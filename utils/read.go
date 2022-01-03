@@ -29,6 +29,12 @@ func ReadLines(path string) ([]string, error) {
 	return lines, scanner.Err()
 }
 
+func Input() []string {
+	lines, _ := ReadLines(ReadFileFromArgs())
+
+	return lines
+}
+
 func MapToNumbers(numbers []string) []int {
 	vsm := make([]int, len(numbers))
 	for i, v := range numbers {

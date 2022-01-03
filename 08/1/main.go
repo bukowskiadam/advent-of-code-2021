@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("8/input.txt")
+	lines := utils.Input()
 	answer := 0
 
 	for _, line := range lines {

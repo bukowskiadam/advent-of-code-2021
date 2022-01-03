@@ -222,7 +222,7 @@ func find(level int) int {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	for _, line := range lines {
 		world = append(world, []byte(line))

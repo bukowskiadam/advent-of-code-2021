@@ -120,7 +120,7 @@ func reduceNumber(num *SN, depth int) (bool, int, int) {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	var number *SN
 

@@ -87,7 +87,7 @@ func verify(program []string, input [size]int) {
 }
 
 func main() {
-	program, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	program := utils.Input()
 
 	// Largest
 	largest := [size]int{1, 2, 9, 3, 4, 9, 9, 8, 9, 4, 9, 1, 9, 9}

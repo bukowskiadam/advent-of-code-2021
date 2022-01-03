@@ -63,7 +63,7 @@ func p(g *Grid, step int) {
 }
 
 func main() {
-	lines, _ := utils.ReadLines("11/input.txt")
+	lines := utils.Input()
 
 	grid := parseInput(lines)
 

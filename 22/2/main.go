@@ -129,7 +129,7 @@ func sum() int {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	for _, line := range lines {
 		state := true

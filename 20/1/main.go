@@ -69,7 +69,7 @@ func transform(image []string, dict string) []string {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	dict := lines[0]
 	image := lines[2:]

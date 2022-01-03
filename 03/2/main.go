@@ -45,7 +45,7 @@ func getFinalValue(list []string, one, zero byte) int64 {
 }
 
 func main() {
-	lines, _ := utils.ReadLines("3/input.txt")
+	lines := utils.Input()
 
 	oxygen := getFinalValue(lines, '1', '0')
 	co2 := getFinalValue(lines, '0', '1')

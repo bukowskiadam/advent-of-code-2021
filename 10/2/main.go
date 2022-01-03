@@ -27,7 +27,7 @@ func isMatching(o rune, c rune) bool {
 }
 
 func main() {
-	lines, _ := utils.ReadLines("10/input.txt")
+	lines := utils.Input()
 	scoresMap := map[rune]int{'(': 1, '[': 2, '{': 3, '<': 4}
 	var allScores []int
 

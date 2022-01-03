@@ -40,7 +40,7 @@ func play(scores, pos [2]int, player int) (int, int) {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	possibleRolls = []Roll{{3, 1}, {4, 3}, {5, 6}, {6, 7}, {7, 6}, {8, 3}, {9, 1}}
 

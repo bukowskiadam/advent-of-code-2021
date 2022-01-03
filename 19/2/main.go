@@ -115,7 +115,7 @@ func city(p1, p2 Pos) int {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	scanners := []Scanner{}
 

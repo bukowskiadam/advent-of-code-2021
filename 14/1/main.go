@@ -9,7 +9,7 @@ import (
 const STEPS = 10
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	polymer := lines[0]
 	rules := map[string]string{}

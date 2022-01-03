@@ -175,7 +175,7 @@ func magnitude(num *SN) int {
 }
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	max := 0
 

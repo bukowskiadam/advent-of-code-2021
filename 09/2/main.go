@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines(utils.ReadFileFromArgs())
+	lines := utils.Input()
 
 	maxY := len(lines)
 	maxX := len(lines[0])

@@ -19,8 +19,7 @@ func parseInput(input string) []int {
 const DAYS = 80
 
 func main() {
-	// READ THE INPUT
-	lines, _ := utils.ReadLines("6/input.txt")
+	lines := utils.Input()
 	counters := parseInput(lines[0])
 	fmt.Println(counters)
 

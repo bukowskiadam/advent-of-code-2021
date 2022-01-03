@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	lines, _ := utils.ReadLines("2/input.txt")
+	lines := utils.Input()
 	var horizontal, depth int
 
 	for _, value := range lines {
