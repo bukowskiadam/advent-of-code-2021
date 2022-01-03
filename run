@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+DAY=$(printf "%02d" $1)
+TASK=$2
+INPUT=${3:-input}
+
+go run "./$DAY/$TASK" "./$DAY/$INPUT.txt"
