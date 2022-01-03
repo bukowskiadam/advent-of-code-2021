@@ -8,10 +8,11 @@ import (
 
 const wall = byte('#')
 const empty = byte('.')
+const amphipodsCount = 16
 
 var world [][]byte
 var amphipods []Amphipod
-var minCost int
+var states map[State]int
 
 type Position struct {
 	x, y int
@@ -28,6 +29,15 @@ type Amphipod struct {
 	face     byte
 	home     int8
 	moves    int8
+}
+
+type AmphipodState struct {
+	position Position
+	face     byte
+}
+
+type State struct {
+	amphipods [amphipodsCount]AmphipodState
 }
 
 func (p *Position) mark(face byte) {
@@ -67,6 +77,24 @@ func loadAmphipods() {
 			}
 		}
 	}
+}
+
+func createState() State {
+	s := State{}
+	i := 0
+	for y, row := range world {
+		for x, field := range row {
+			switch field {
+			case 'A', 'B', 'C', 'D':
+				s.amphipods[i] = AmphipodState{
+					position: Position{x, y},
+					face:     field,
+				}
+				i++
+			}
+		}
+	}
+	return s
 }
 
 func (a *Amphipod) canStop(pos *Position) bool {
@@ -109,10 +137,6 @@ func (a *Amphipod) getNextPositions() []Step {
 		distance := current.distance + 1
 		cost := distance * int(a.cost)
 
-		if cost > minCost {
-			continue
-		}
-
 		var nextPositions []Position
 
 		if current.position.y == 1 {
@@ -151,21 +175,20 @@ func printWorld() {
 
 var tries int
 
-func find(currentCost int) {
-	// printWorld()
-	tries++
-	if currentCost > minCost {
-		return
-	}
-	if isSolved() {
-		if currentCost < minCost {
-			fmt.Println("Cost: ", currentCost)
-			fmt.Println("tries: ", tries)
-			minCost = currentCost
-		}
-		return
+func find(level int) int {
+	currentState := createState()
+
+	if val, present := states[currentState]; present {
+		return val
 	}
 
+	// printWorld()
+	tries++
+	if isSolved() {
+		return 0
+	}
+
+	min := math.MaxInt / 2
 	for i := range amphipods {
 		a := &amphipods[i]
 		if a.moves == 0 {
@@ -177,15 +200,14 @@ func find(currentCost int) {
 
 		nextPositions := a.getNextPositions()
 		for _, next := range nextPositions {
-			nextCost := currentCost + next.cost
-
-			if nextCost > minCost {
-				continue
-			}
-
 			a.position = next.position
 			next.position.mark(a.face)
-			find(nextCost)
+
+			nextCost := next.cost + find(level+1)
+			if nextCost < min {
+				min = nextCost
+			}
+
 			next.position.mark(empty)
 		}
 
@@ -193,6 +215,10 @@ func find(currentCost int) {
 		a.position = originalPosition
 		originalPosition.mark(a.face)
 	}
+
+	states[currentState] = min
+
+	return min
 }
 
 func main() {
@@ -201,9 +227,9 @@ func main() {
 	for _, line := range lines {
 		world = append(world, []byte(line))
 	}
-	minCost = math.MaxInt
 
 	loadAmphipods()
 
-	find(0)
+	states = make(map[State]int)
+	fmt.Println("Result", find(0))
 }
